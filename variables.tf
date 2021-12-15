@@ -40,3 +40,10 @@ variable "cluster_arn" {
   type        = string
   default     = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }
+
+locals {
+  common_tags = {
+    Component   = "eks-cluster"
+    Environment = "staging"
+  }
+}

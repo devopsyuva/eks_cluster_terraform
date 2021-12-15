@@ -14,11 +14,16 @@ resource "aws_iam_role" "eks_cluster" {
   ]
 }
 POLICY
+
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "eks-sts"
+    }
+  )
 }
 
 resource "aws_iam_role_policy_attachment" "eks_cluster_policy" {
   policy_arn = var.cluster_arn
   role       = aws_iam_role.eks_cluster.name
 }
-
-

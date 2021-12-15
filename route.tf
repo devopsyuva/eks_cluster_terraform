@@ -1,9 +1,23 @@
 resource "aws_route_table" "public_route_table" {
   vpc_id = aws_vpc.eks_vpc.id
+
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "public-route"
+    }
+  )
 }
 
 resource "aws_route_table" "private_route_table" {
   vpc_id = aws_vpc.eks_vpc.id
+
+  tags = merge(
+    local.common_tags,
+    {
+      Name = "private-route"
+    }
+  )
 }
 
 resource "aws_route" "public_route" {
