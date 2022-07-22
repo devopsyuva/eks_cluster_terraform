@@ -2,7 +2,7 @@ resource "aws_eks_node_group" "webapplication" {
   cluster_name    = aws_eks_cluster.sg.name
   node_group_name = "web-application"
   remote_access {
-    ec2_ssh_key = "sudhams_virginia_demo"
+    ec2_ssh_key = var.eks_node_ssh_key
   }
   node_role_arn = aws_iam_role.node_iam_role.arn
   subnet_ids    = flatten([aws_subnet.public_subnet.*.id, aws_subnet.private_subnet.*.id])
