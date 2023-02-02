@@ -7,7 +7,7 @@ variable "cluster_name" {
 variable "aws_region" {
   description = "Region on which to host EKS Cluster"
   type        = string
-  default     = "us-east-1"
+  default     = "us-east-2"
 }
 
 variable "vpc_network" {
@@ -51,5 +51,5 @@ locals {
 variable "eks_node_ssh_key" {
   description = "Key pair to SSH nodes(compute nodes) of EKS cluster"
   type        = string
-  default     = "awsdemokey"
+  default     = "visualpath-demo-ohio"
 }
