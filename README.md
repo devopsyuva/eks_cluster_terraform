@@ -1,5 +1,5 @@
 # Manage EKS cluster through Terraform config files
-- Terraform
+- Terraform IaC
 - AWS EKS Cluster
 - Jenkins CICD
 - SonarQube
